@@ -12,15 +12,15 @@ class CartController extends Controller
 
     public function index()
     {
-        $cartItems = CartFacade::session($this->getUserId())->getContent();
+        $products = CartFacade::session($this->getUserId())->getContent();
         $total = CartFacade::session($this->getUserId())->getTotal();
 
-        return view('cart.index', ['cartItems' => $cartItems, 'total' => $total]);
+        return view('cart.index', ['products' => $products, 'total' => $total]);
     }
 
     public function store(Request $request)
     {
-        $product = Product::find($request->product);
+        $product = Product::findOrFail($request->product);
 
         CartFacade::session($this->getUserId())->add([
             'id' => $product->id,
@@ -29,12 +29,20 @@ class CartController extends Controller
             'quantity' => $request->quantity,
         ]);
 
-        return redirect()->route('cart.index');
+        return redirect()
+            ->route('cart.index')
+            ->with('status', 'Product was added to the cart!');
     }
 
-    public function destroy()
+    public function destroy(Request $request)
     {
-        CartFacade::session($this->getUserId())->remove();
+        $product = Product::findOrFail($request->product);
+
+        CartFacade::session($this->getUserId())->remove($product->id);
+
+        return redirect()
+            ->route('cart.index')
+            ->with('status', 'Product was removed from the cart!');
     }
 
     private function getUserId()

@@ -26,9 +26,10 @@ Route::group(['prefix' => 'products'], function () {
     Route::get('/{product:slug}', 'ProductController@show')->name('products.show');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/cart', 'CartController@index')->name('cart.index');
-    Route::post('/cart/{product}', 'CartController@store')->name('cart.store');
+Route::middleware('auth')->prefix('cart')->group(function () {
+    Route::get('/', 'CartController@index')->name('cart.index');
+    Route::post('/{product}', 'CartController@store')->name('cart.store');
+    Route::delete('/{product}', 'CartController@destroy')->name('cart.destroy');
 });
 
 
