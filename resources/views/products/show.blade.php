@@ -40,7 +40,7 @@
                         <label class="text-gray-700" for="quantity">Quantity:</label>
 
                         <input class="text-center mx-8 border border-gray-500" type="number" id="quantity"
-                            name="quantity" id="quantity" value="1">
+                            name="quantity" id="quantity" value="1" min="0">
                     </div>
 
                     <button type="submit"

@@ -29,7 +29,7 @@ class Products extends \TCG\Voyager\Widgets\BaseDimmer
             'icon'   => 'voyager-basket',
             'title'  => "{$count} {$string}",
             // 'text'   => __('voyager::dimmer.post_text', ['count' => $count, 'string' => Str::lower($string)]),
-            'text'   => 'You have ' . $count . ' products in your database.',
+            'text'   => 'You have ' . $count . ' product(s) in your database.',
             'button' => [
                 // 'text' => __('voyager::dimmer.post_link_text'),
                 'text' => 'View all products',

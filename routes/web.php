@@ -29,6 +29,7 @@ Route::group(['prefix' => 'products'], function () {
 Route::middleware('auth')->prefix('cart')->group(function () {
     Route::get('/', 'CartController@index')->name('cart.index');
     Route::post('/{product}', 'CartController@store')->name('cart.store');
+    Route::put('/{product}', 'CartController@update')->name('cart.update');
     Route::delete('/{product}', 'CartController@destroy')->name('cart.destroy');
 });
 

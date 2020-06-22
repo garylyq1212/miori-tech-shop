@@ -27,11 +27,25 @@ class CartController extends Controller
             'name' => $product->name,
             'price' => $product->price,
             'quantity' => $request->quantity,
+            'associatedModel' => Product::class
         ]);
 
         return redirect()
             ->route('cart.index')
             ->with('status', 'Product was added to the cart!');
+    }
+
+    public function update(Request $request)
+    {
+        $product = Product::findOrFail($request->product);
+
+        CartFacade::session($this->getUserId())->update([
+            'quantity' => $request->quantity
+        ]);
+
+        dd($product);
+
+        return redirect()->route('cart.index');
     }
 
     public function destroy(Request $request)

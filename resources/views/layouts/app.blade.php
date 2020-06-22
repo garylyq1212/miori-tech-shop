@@ -18,6 +18,12 @@
 
     {{-- Alpine.js --}}
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+    <style>
+        .cart-container {
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100">
@@ -37,7 +43,7 @@
                 </span>
             </a>
 
-            <a href="{{ route('cart.index') }}" class="font-bold uppercase mx-2 text-xl hover:text-gray-900">
+            <a href="{{ route('cart.index') }}" class="font-bold mx-2 md:text-xl hover:text-gray-900">
                 {{-- cart icon --}}
                 <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -96,7 +102,7 @@
                 </a>
 
                 <div x-show.transition="open" @click.away="open = false"
-                    class="w-3/12 mx-auto my-2 border border-gray-400 shadow-md rounded bg-white p-4 hover:bg-gray-200 sm:absolute sm:right-0 sm:mx-3"
+                    class="w-3/12 mx-auto my-2 border border-gray-400 shadow-md rounded bg-white p-4 hover:bg-gray-200 sm:absolute sm:right-0 sm:mx-4"
                     aria-labelledby="navbarDropdown">
                     <a class="block font-semibold hover:text-gray-900" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -110,33 +116,11 @@
             </div>
             @endguest
         </nav>
-
-
-        {{-- <div x-data="{isOpen: false}">
-            <div class="sm:hidden">
-                <button @click="isOpen = !isOpen" class="sm:hidden">toggle</button>
-            </div>
-            <p x-bind:class="{ 'block': isOpen, 'hidden': !isOpen }" class="sm:block">Lorem ipsum dolor sit amet.</p>
-        </div> --}}
     </header>
 
     <main class="py-4">
         @yield('content')
     </main>
-
-    {{-- <script>
-        function toggleMenu() {
-            return {
-                show: false,
-                toggle() {
-                    this.show = !this.show;
-                }
-                isOpen() {
-                    return this.show === true;
-                }
-            }
-        }
-    </script> --}}
 </body>
 
 </html>
