@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="mx-4 md:w-10/12 md:mx-auto">
+<section class="py-4 mx-4 md:w-10/12 md:mx-auto">
     <ul class="flex bg-gray-200 p-2">
         <li class="mx-2 text-blue-600 hover:text-blue-900 text-sm md:text-base">
             <a class="active:text-blue-900" href="{{ route('welcome') }}">Home</a>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container mx-auto overflow-x-hidden">
+<section class="py-4 container mx-auto overflow-x-hidden">
     <div class="mx-6 sm:mx-3">
         @if (session()->has('status'))
         <div class="w-1/3 border border-green-600 p-2 rounded">
@@ -79,19 +79,13 @@
                 </h3>
             </div>
 
-            <div class="w-full sm:flex sm:justify-between">
-                <form action="" method="POST" class="my-3 w-full">
-                    @csrf
+            <div class="w-full sm:flex sm:justify-between text-center">
+                <a href="{{ route('checkout.index') }}"
+                    class="w-full sm:w-1/4 my-2 px-3 py-2 font-semibold text-indigo-500 border-2 border-indigo-500 rounded shadow hover:bg-indigo-600 hover:text-white md:transition md:duration-200 md:ease-out">Checkout</a>
 
-                    <button type="submit"
-                        class="w-full sm:w-1/2 px-3 py-2 font-semibold text-indigo-500 border-2 border-indigo-500 rounded shadow hover:bg-indigo-600 hover:text-white md:transition md:duration-200 md:ease-out">Checkout</button>
-                </form>
-
-                <button
-                    class="w-full sm:w-1/2 my-2 px-3 py-2 bg-indigo-500 rounded shadow text-white hover:bg-indigo-800 md:transition md:duration-200 md:ease-out">
-                    <a href="{{ route('products.index') }}" class=" ">Continue
-                        Shopping</a>
-                </button>
+                <a href="{{ route('products.index') }}"
+                    class="w-full sm:w-1/4 my-2 px-3 py-2 bg-indigo-500 rounded shadow text-white hover:bg-indigo-800 md:transition md:duration-200 md:ease-out">Continue
+                    Shopping</a>
             </div>
         </div>
     </div>

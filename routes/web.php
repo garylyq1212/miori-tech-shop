@@ -33,6 +33,8 @@ Route::middleware('auth')->prefix('cart')->group(function () {
     Route::delete('/{product}', 'CartController@destroy')->name('cart.destroy');
 });
 
+Route::middleware('auth')->get('/checkout', 'CheckoutController@index')->name('checkout.index');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

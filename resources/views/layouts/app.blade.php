@@ -23,6 +23,36 @@
         .cart-container {
             align-items: center;
         }
+
+        .StripeElement {
+            /* box-sizing: border-box; */
+
+            /* height: 40px; */
+
+            padding: 0.5rem 0.75rem;
+
+            border: 2px solid transparent;
+            border-radius: 0.25rem;
+            background-color: white;
+
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+            -webkit-transition: box-shadow 150ms ease;
+            transition: box-shadow 150ms ease;
+        }
+
+        .StripeElement--focus {
+            /* box-shadow: 0 1px 3px 0 #cfd7df; */
+            border: 2px solid #63b3ed;
+        }
+
+        .StripeElement--invalid {
+            border-color: #fa755a;
+        }
+
+        .StripeElement--webkit-autofill {
+            background-color: #fefde5 !important;
+        }
     </style>
 </head>
 
@@ -118,7 +148,7 @@
         </nav>
     </header>
 
-    <main class="py-4">
+    <main>
         @yield('content')
     </main>
 </body>

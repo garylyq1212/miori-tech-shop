@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container mx-auto">
+<section class="py-4 container mx-auto">
     <header class="mx-3">
         <ul class="flex bg-gray-200 p-2">
             <li class="mx-2 text-blue-600 hover:text-blue-900">

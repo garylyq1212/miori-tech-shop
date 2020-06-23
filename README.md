@@ -1,5 +1,10 @@
 # Miori Tech Shop
 
+Design inspiration thanks to:
+
+-   [Collect UI](http://collectui.com/)
+-   [Tailblocks](https://mertjf.github.io/tailblocks/)
+
 -   Users
 
     -   name
