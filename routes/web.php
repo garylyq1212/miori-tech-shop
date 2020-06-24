@@ -34,6 +34,7 @@ Route::middleware('auth')->prefix('cart')->group(function () {
 });
 
 Route::middleware('auth')->get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::middleware('auth')->post('/checkout', 'CheckoutController@store')->name('checkout.store');
 
 
 Route::group(['prefix' => 'admin'], function () {

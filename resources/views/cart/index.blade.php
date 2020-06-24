@@ -92,18 +92,20 @@
 </section>
 
 <script>
-    const decrement = document.getElementById("decrement");
-    const increment = document.getElementById("increment");
-    const quantity = document.getElementById("quantity");
+    (function() {
+        const decrement = document.getElementById("decrement");
+        const increment = document.getElementById("increment");
+        const quantity = document.getElementById("quantity");
 
-    increment.addEventListener("click", () => {
-        quantity.value = Number(quantity.value) + 1;
-    });
+        increment.addEventListener("click", () => {
+            quantity.value = Number(quantity.value) + 1;
+        });
 
-    decrement.addEventListener("click", () => {
-        if (Number(quantity.value) !== 0) {
-            quantity.value = Number(quantity.value) - 1;
-        }
+        decrement.addEventListener("click", () => {
+            if (Number(quantity.value) !== 0) {
+                quantity.value = Number(quantity.value) - 1;
+            }
+        });
     });
 </script>
 @endsection

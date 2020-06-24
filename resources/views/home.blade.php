@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="py-4 container">
+<section class="py-4 container">
+    @if (session()->has('status'))
+    <div class="w-1/2 border border-green-600 p-2 rounded">
+        <p class="text-green-600 font-semibold text-center">{{ session()->get('status') }}</p>
+    </div>
+    @endif
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -19,5 +25,5 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection

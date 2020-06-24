@@ -53,6 +53,10 @@
         .StripeElement--webkit-autofill {
             background-color: #fefde5 !important;
         }
+
+        #card-errors {
+            color: #fa755a;
+        }
     </style>
 </head>
 
@@ -132,9 +136,14 @@
                 </a>
 
                 <div x-show.transition="open" @click.away="open = false"
-                    class="w-3/12 mx-auto my-2 border border-gray-400 shadow-md rounded bg-white p-4 hover:bg-gray-200 sm:absolute sm:right-0 sm:mx-4"
+                    class="w-1/2 sm:w-3/12 mx-auto my-2 border border-gray-400 shadow-md rounded bg-white sm:absolute sm:right-0 sm:mx-4"
                     aria-labelledby="navbarDropdown">
-                    <a class="block font-semibold hover:text-gray-900" href="{{ route('logout') }}"
+                    <a class="p-3 block font-semibold hover:text-gray-900 hover:bg-gray-200" href="{{ route('home') }}">
+                        Profile
+                    </a>
+
+                    <a class="p-3 block font-semibold hover:text-gray-900 hover:bg-gray-200"
+                        href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
