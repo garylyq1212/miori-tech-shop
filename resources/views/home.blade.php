@@ -1,29 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="py-4 container">
+<section class="py-4 container mx-auto">
     @if (session()->has('status'))
     <div class="w-1/2 border border-green-600 p-2 rounded">
         <p class="text-green-600 font-semibold text-center">{{ session()->get('status') }}</p>
     </div>
     @endif
 
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+    <div>
+        <h1>Your Orders</h1>
+        {{-- @if ()
 
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+        @endif --}}
+        @forelse ($orders as $order)
+        <div>
+            <p>{{ $order->product->name }}</p>
+            <p>{{ $order->quantity }}x</p>
+            <img src="/storage/{{ $order->product->image }}" alt="{{ $order->product->slug }}" class="w-40">
+            <p>{{ $order->created_at->localeDayOfWeek }}</p>
+            <p>{{ $order->created_at->diffForHumans() }}</p>
         </div>
+        @empty
+        <p>Nothing</p>
+        @endforelse
     </div>
 </section>
 @endsection

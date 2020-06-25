@@ -139,7 +139,7 @@
                     class="w-1/2 sm:w-3/12 mx-auto my-2 border border-gray-400 shadow-md rounded bg-white sm:absolute sm:right-0 sm:mx-4"
                     aria-labelledby="navbarDropdown">
                     <a class="p-3 block font-semibold hover:text-gray-900 hover:bg-gray-200" href="{{ route('home') }}">
-                        Profile
+                        Your Orders
                     </a>
 
                     <a class="p-3 block font-semibold hover:text-gray-900 hover:bg-gray-200"
