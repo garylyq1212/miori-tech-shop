@@ -37,7 +37,7 @@ class HomeController extends Controller
             return OrderProduct::where('order_id', $order->id)->get();
         });
 
-        dd($orderProducts[0]);
+        dd($orderProducts);
 
 
         return view('home', ['orders' => $orders]);

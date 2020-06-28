@@ -1,9 +1,13 @@
 # Miori Tech Shop
 
+Using Laravel to create e-commerceish shop for learning purposes.
+
 Design inspiration thanks to:
 
 -   [Collect UI](http://collectui.com/)
 -   [Tailblocks](https://mertjf.github.io/tailblocks/)
+
+Database Models (Using PostgreSQL)
 
 -   Users
 
@@ -18,12 +22,18 @@ Design inspiration thanks to:
     -   description
     -   image
     -   price
-    -   stock / quantity
+
+-   Category Products
+
+    -   product type
 
 -   Orders
 
-    -   user's product
+    -   user's id
+    -   billing total
 
--   Categories
+-   Order Products
 
-    -   product type
+    -   order's id
+    -   product's id
+    -   quantity

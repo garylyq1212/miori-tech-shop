@@ -36,6 +36,7 @@
                 <form action="{{ route('cart.store', $product) }}" method="POST">
                     @csrf
 
+                    {{-- TODO: need to change the design of quantity --}}
                     <div class="flex items-center">
                         <label class="text-gray-700" for="quantity">Quantity:</label>
 
